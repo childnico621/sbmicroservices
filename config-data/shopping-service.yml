@@ -44,11 +44,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8099/eureka/
-spring:
-  cloud:
-    openfeign:
-      circuitbreaker:
-        enabled: true
+openfeign:
+  circuitbreaker:
+    enabled: true
 resilience4j:
   circuitbreaker:
     instances:
