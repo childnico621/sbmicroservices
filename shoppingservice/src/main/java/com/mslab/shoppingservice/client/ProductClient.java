@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mslab.shoppingservice.model.Product;
 
-@FeignClient(name = "product-service", path="/products")
+@FeignClient(name = "service-product", path="/products")
 public interface ProductClient {
 
     @GetMapping(value = "/{id}")

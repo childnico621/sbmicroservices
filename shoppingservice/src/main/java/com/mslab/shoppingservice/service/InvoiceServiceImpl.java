@@ -3,7 +3,6 @@ package com.mslab.shoppingservice.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mslab.shoppingservice.client.CustomerClient;
@@ -15,22 +14,18 @@ import com.mslab.shoppingservice.entity.InvoiceItem;
 import com.mslab.shoppingservice.model.Customer;
 import com.mslab.shoppingservice.model.Product;
 
-import com.mslab.shoppingservice.repository.InvoiceItemsRepository;
+
 import com.mslab.shoppingservice.repository.InvoiceRepository;
 
-@Service
-public class InvoiceServiceImpl implements InvoiceService {
-    @Autowired
-    InvoiceRepository invoiceRepository;
-    
-    @Autowired
-    InvoiceItemsRepository invoiceItemsRepository;
+import lombok.RequiredArgsConstructor;
 
-    @Autowired
-    CustomerClient customerClient; 
+@Service
+@RequiredArgsConstructor
+public class InvoiceServiceImpl implements InvoiceService {
     
-    @Autowired
-    ProductClient productClient;
+    private final InvoiceRepository invoiceRepository;
+    private final CustomerClient customerClient; 
+    private final ProductClient productClient;
 
     @Override
     public List<Invoice> findInvoiceAll() {

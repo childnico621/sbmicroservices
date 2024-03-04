@@ -12,7 +12,7 @@ CREATE TABLE tbl_invoices (
 
 CREATE TABLE tbl_invoice_items (
   id BIGINT AUTO_INCREMENT PRIMARY KEY,
-  invoice_id BIGINT NOT NULL,
+  invoice_id BIGINT,
   product_id BIGINT NOT NULL,
   quantity DOUBLE NOT NULL,
   price DOUBLE NOT NULL

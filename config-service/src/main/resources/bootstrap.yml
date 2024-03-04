@@ -6,11 +6,12 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/childnico621/sbmicroservices.git
+          uri: https://github.com/childnico621/sbmicroservices.git #config-data
           searchPaths: config-data
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
-  # security:
-    # user:
-      # name: root
-      # password: s3cr3t
+          default-label: "main"
+  security:
+    user:
+      name: root
+      password: s3cr3t
